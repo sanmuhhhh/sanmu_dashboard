@@ -1,2 +1,9 @@
+# Python
 build/
-__pycache__
+__pycache__/
+*.pyc
+*.so
+
+# Node.js / Frontend
+node_modules/
+*.log

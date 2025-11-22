@@ -19,13 +19,13 @@ set(CMAKE_CXX_STANDARD 17)
 
 # TODO: 集成 pybind11（Python-C++ 绑定库）
 # 步骤：
-#   1. 下载 pybind11 到 cpp_core/pybind11/ 目录
+#   1. 下载 pybind11 到 core/pybind11/ 目录
 #   2. 取消注释下面的 add_subdirectory 行
 #   3. 取消注释 pybind11_add_module 行
 #   4. 创建 src/main.cpp 实现 Python 接口
 
 # add_subdirectory(pybind11)                    # 引入 pybind11 子项目
-# pybind11_add_module(cpp_core src/main.cpp)   # 创建 Python 模块 "cpp_core"
+# pybind11_add_module(core src/main.cpp)   # 创建 Python 模块 "core"
 
 # ==========================================
 # 📚 使用示例（未来参考）
@@ -36,8 +36,8 @@ set(CMAKE_CXX_STANDARD 17)
 #   make
 #
 # 生成的 Python 模块：
-#   build/cpp_core.cpython-311-x86_64-linux-gnu.so
+#   build/core.cpython-311-x86_64-linux-gnu.so
 #
 # 在 Python 中使用：
-#   import cpp_core
-#   result = cpp_core.add(1, 2)  # 调用 C++ 函数
+#   import core
+#   result = core.add(1, 2)  # 调用 C++ 函数
