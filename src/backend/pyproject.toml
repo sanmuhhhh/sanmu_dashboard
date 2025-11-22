@@ -1,0 +1,53 @@
+# ==========================================
+# 📦 Sanmu Dashboard 后端项目配置
+# Python 项目元数据和依赖管理文件
+# ==========================================
+
+[project]
+# 项目基本信息
+name = "sanmu-dashboard-backend"
+version = "0.1.0"
+description = "Personal Data Empire Backend with FastAPI and C++"
+readme = "README.md"
+
+# Python 版本要求（必须 >= 3.10，因为使用了类型注解等新特性）
+requires-python = ">=3.10"
+
+# 生产环境依赖（运行时必需）
+dependencies = [
+    # 🌐 Web 框架
+    "fastapi>=0.109.0",              # 现代 Python Web 框架，自动生成 API 文档
+    "uvicorn[standard]>=0.27.0",     # ASGI 服务器（运行 FastAPI），[standard] 包含性能优化扩展
+    
+    # 🗄️ 数据库相关
+    "sqlalchemy>=2.0.25",            # ORM 框架，用于操作 PostgreSQL
+    "alembic>=1.13.1",               # 数据库迁移工具（配合 SQLAlchemy）
+    "asyncpg>=0.29.0",               # PostgreSQL 异步驱动（高性能）
+    
+    # 🔄 缓存与消息队列
+    "redis>=5.0.1",                  # Redis 客户端（用于缓存和 Celery Broker）
+    "celery>=5.3.6",                 # 分布式任务队列（处理后台任务、定时任务）
+    
+    # ⚙️ 配置与工具
+    "pyyaml>=6.0.1",                 # YAML 文件解析（读取 config/*.yaml）
+    "pydantic>=2.5.0",               # 数据验证库（FastAPI 的默认验证器）
+    "pydantic-settings>=2.1.0",      # Pydantic 配置管理扩展（从环境变量/YAML 加载配置）
+]
+
+# ==========================================
+# 🔨 构建系统配置
+# 定义如何打包和分发此项目
+# ==========================================
+[build-system]
+requires = ["hatchling"]              # 使用 Hatchling 作为构建后端
+build-backend = "hatchling.build"
+
+# ==========================================
+# 🧪 开发依赖组
+# 仅在开发环境需要的工具（测试、调试等）
+# ==========================================
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",                 # 单元测试框架
+    "httpx>=0.26.0",                  # HTTP 客户端（用于测试 API 接口）
+]
