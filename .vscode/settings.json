@@ -1,0 +1,26 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        // 全局默认注释颜色：绿色
+        "scope": [
+          "comment",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#12ac12"
+        }
+      },
+      {
+        // YAML 专用注释颜色：圆珠笔蓝 (亮蓝以适应深色背景)
+        "scope": [
+          "comment.line.number-sign.yaml",
+          "punctuation.definition.comment.yaml"
+        ],
+        "settings": {
+          "foreground": "#3388FF"
+        }
+      }
+    ]
+  }
+}
