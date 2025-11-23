@@ -1,21 +1,35 @@
 <script setup lang="ts">
-import { NConfigProvider, NGlobalStyle, darkTheme } from 'naive-ui'
+import { NConfigProvider, NGlobalStyle } from 'naive-ui'
+import { RouterView } from 'vue-router'
+import { useThemeStore } from './store/theme'
+import { storeToRefs } from 'pinia'
+
+const themeStore = useThemeStore()
+const { theme } = storeToRefs(themeStore)
 </script>
 
 <template>
-  <n-config-provider :theme="darkTheme">
+  <n-config-provider :theme="theme">
     <n-global-style />
-    <div class="app-container">
-      <h1>Sanmu Dashboard</h1>
-      <p>Frontend initialized successfully.</p>
-    </div>
+    <router-view />
   </n-config-provider>
 </template>
 
 <style>
-.app-container {
-  padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: v-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
 }
 </style>
 
