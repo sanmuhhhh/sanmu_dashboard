@@ -6,4 +6,5 @@ __pycache__/
 
 # Node.js / Frontend
 node_modules/
+tmp/
 *.log

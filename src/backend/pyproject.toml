@@ -8,7 +8,6 @@
 name = "sanmu-dashboard-backend"
 version = "0.1.0"
 description = "Personal Data Empire Backend with FastAPI and C++"
-readme = "README.md"
 
 # Python 版本要求（必须 >= 3.10，因为使用了类型注解等新特性）
 requires-python = ">=3.10"
@@ -41,6 +40,9 @@ dependencies = [
 [build-system]
 requires = ["hatchling"]              # 使用 Hatchling 作为构建后端
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]                    # 指定要打包的包目录
 
 # ==========================================
 # 🧪 开发依赖组
